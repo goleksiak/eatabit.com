@@ -1,11 +1,12 @@
 require 'rails_helper'
 
-describe City, type: :model do
+describe Restaurant, type: :model do
   context 'validations' do
     it { should validate_presence_of :name }
+    it { should validate_presence_of :city_id }
   end
 
   context 'associations' do
-    it { should have_many :restaurants }
+      it { should belong_to :city }
   end
 end
